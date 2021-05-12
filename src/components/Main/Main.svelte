@@ -45,14 +45,10 @@
 
   $: handleOpen = () => {
     isOpen = !isOpen;
-    console.log(isOpen);
   };
-
-  console.log(isOpen);
 
   const { requestSummoner, handleSummoner } = useSummoner();
 
-  console.log(requestSummoner);
   $: generation = 0;
   $: name = "";
   $: lolNickName = "";
@@ -74,7 +70,6 @@
 
       const res = await requestSummoner(request);
 
-      console.log(res);
       if (res.status === 200) {
         alert("성공");
         handleOpen();
