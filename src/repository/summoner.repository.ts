@@ -18,5 +18,5 @@ export type applySummonerRequest = {
     generation :number;
     name:string;
     lolNickName:string;
-    position:string
+    position:string | number
 }

@@ -9,6 +9,7 @@
     "format": "prettier --write --plugin-search-dir=. ."
   },
   "devDependencies": {
+    "@sveltejs/adapter-static": "^1.0.0-next.9",
     "@sveltejs/kit": "next",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
@@ -26,7 +27,12 @@
   "dependencies": {
     "@fontsource/fira-mono": "^4.2.2",
     "@lukeed/uuid": "^2.0.0",
+    "@zerodevx/svelte-toast": "^0.3.0",
+    "add": "^2.0.6",
     "axios": "^0.21.1",
-    "cookie": "^0.4.1"
+    "cookie": "^0.4.1",
+    "svelte-icons": "^2.1.0",
+    "svelte-toast": "^1.0.0",
+    "yarn": "^1.22.10"
   }
 }

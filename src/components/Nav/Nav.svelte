@@ -1,9 +1,9 @@
 <div class="NavWrapper">
   <div class="TitleWrapper">
-    <div class="TopTitle">Daesogoin</div>
+    <div class="TopTitle">DOL</div>
     <div class="Description">
-      dgsw character dictionary <br /> 대구소프트웨어고등학교 졸,재학생의 인물 정보를
-      기록합니다.
+      dgsw character dictionary <br /> 대구소프트웨어고등학교 리그오브레전드 티어
+      정보를 기록합니다.
     </div>
   </div>
 </div>

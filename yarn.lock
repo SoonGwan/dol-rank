@@ -84,6 +84,11 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@sveltejs/adapter-static@^1.0.0-next.9":
+  version "1.0.0-next.9"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.9.tgz#e8cc5ddac3e18fffc9ce2ecc63b39d25a0bca894"
+  integrity sha512-yqZ+4dzi+2+2jDPHCrI7WrLdXyQ/0U56a7aFdepmodpvpxhazF203D1ez+AtTo27FjMmHjfI+q0O2FivUOosxg==
+
 "@sveltejs/kit@next":
   version "1.0.0-next.104"
   resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.104.tgz#a80ebb9f28aea77184b90e10e11c4f26e3a74c2e"
@@ -200,6 +205,11 @@
     "@typescript-eslint/types" "4.23.0"
     eslint-visitor-keys "^2.0.0"
 
+"@zerodevx/svelte-toast@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@zerodevx/svelte-toast/-/svelte-toast-0.3.0.tgz#39a15b409ddb6790c66a0665cbd589c0d8dd9234"
+  integrity sha512-TY5dLB5DEpxuHu60M6gum+fDxzIGXg35R8500orz58JTFs9LiHWoEfeJ4n9t7Afix3iMmYLl2thjhnCHCiQIhQ==
+
 acorn-jsx@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.1.tgz#fc8661e11b7ac1539c47dbfea2e72b3af34d267b"
@@ -209,6 +219,11 @@ acorn@^7.4.0:
   version "7.4.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
+
+add@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
+  integrity sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU=
 
 ajv@^6.10.0, ajv@^6.12.4:
   version "6.12.6"
@@ -1136,6 +1151,11 @@ svelte-hmr@^0.14.2:
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.3.tgz#b6a6781bc923352e3c257ccd7d87d01821ea2d95"
   integrity sha512-N56xX405zLMw2tpGHKRx5h+kmdeZwxI21pvyC6OyBHJDCF6DlwWBm9TifdQmSD4dloWSmpDPzHWYa3CSjfopUg==
 
+svelte-icons@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/svelte-icons/-/svelte-icons-2.1.0.tgz#6f2ec72f1d5c8b2de1a4b8a822c95bcb2f701aca"
+  integrity sha512-rHPQjweEc9fGSnvM0/4gA3pDHwyZyYsC5KhttCZRhSMJfLttJST5Uq0B16Czhw+HQ+HbSOk8kLigMlPs7gZtfg==
+
 svelte-preprocess@^4.0.0:
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-4.7.3.tgz#454fa059c2400b15e7a3caeca18993cff9df0e96"
@@ -1145,6 +1165,11 @@ svelte-preprocess@^4.0.0:
     "@types/sass" "^1.16.0"
     detect-indent "^6.0.0"
     strip-indent "^3.0.0"
+
+svelte-toast@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/svelte-toast/-/svelte-toast-1.0.0.tgz#9b562d8c819a38c524e07b3f17f30b46dae7c630"
+  integrity sha512-i6XHJgCgyAYmobEXS78iei6cQBLYIDgk1rrj65wM0sIi4RzCl/9205sVruZT7zUf0N2xsLkeN2rFh9inlRJXEg==
 
 svelte@^3.34.0:
   version "3.38.2"
@@ -1259,3 +1284,8 @@ yallist@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
+
+yarn@^1.22.10:
+  version "1.22.10"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.10.tgz#c99daa06257c80f8fa2c3f1490724e394c26b18c"
+  integrity sha512-IanQGI9RRPAN87VGTF7zs2uxkSyQSrSPsju0COgbsKQOOXr5LtcVPeyXWgwVa0ywG3d8dg6kSYKGBuYK021qeA==
