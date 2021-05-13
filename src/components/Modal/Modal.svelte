@@ -58,7 +58,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 1;
   }
 
   .BackGround {
@@ -78,7 +78,7 @@
     padding: 20px;
     border-radius: 6 px;
     width: 400px;
-    height: 400px;
+    /* height: 400px; */
     background-color: white;
     z-index: 100;
     border-radius: 4px;

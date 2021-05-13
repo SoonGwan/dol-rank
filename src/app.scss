@@ -27,6 +27,10 @@ body {
     var(--secondary-color) 10.45%,
     var(--tertiary-color) 41.35%
   ); */
+
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
+  }
 }
 
 body::before {

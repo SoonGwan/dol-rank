@@ -5,10 +5,7 @@
   import Modal from "../Modal/Modal.svelte";
   import Nav from "../Nav/Nav.svelte";
   import Summoner from "../Summoner/Summoner.svelte";
-  import { summonerList } from "../../repository/summoner.repository";
   import { applySummonerValidate } from "../../validation/applySummoner.validation";
-  import { toast } from "@zerodevx/svelte-toast";
-  import { onMount } from "svelte";
 
   type summonersProps = {
     accountId: string;
@@ -64,7 +61,6 @@
   const handleRequestSummoner = async () => {
     try {
       if (!applySummonerValidate(request)) {
-        alert("모든 값을 넣어서 등록해주세요!");
         return;
       }
 
@@ -73,7 +69,7 @@
       if (res.status === 200) {
         alert("성공");
         handleOpen();
-        await handleSummoner();
+        summoners = await handleSummoner();
       }
     } catch (err) {
       return err;
@@ -82,7 +78,6 @@
 </script>
 
 <Nav />
-
 <div class="MainWrapper">
   <div class="MainItemSection">
     <div class="SelectWrapper">
@@ -179,6 +174,7 @@
 
     {#each filterSummoner as summoner, index}
       <Summoner
+        position={summoner.position}
         generation={summoner.generation}
         idx={index}
         iconImg={summoner.profileIconId}
@@ -198,7 +194,7 @@
   </div>
 </div>
 
-<style scoped>
+<style scoped lang="scss">
   .MainWrapper {
     width: 100%;
     display: flex;
@@ -212,13 +208,22 @@
     justify-content: flex-start;
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 800px) {
+      width: 90%;
+    }
   }
 
   .SelectWrapper {
     display: flex;
+    flex-wrap: wrap;
     font-size: 14px;
     margin-bottom: 30px;
     justify-content: space-between;
+
+    /* @media screen and (max-width: 800px) {
+      display: none;
+    } */
   }
 
   .SelectItem {
@@ -229,6 +234,11 @@
     /* color: rgb(100, 130, 228); */
     color: white;
     transition: all 0.25s ease;
+
+    @media screen and (max-width: 800px) {
+      padding: 8px 12px;
+      margin-top: 10px;
+    }
   }
 
   .SelectItem:focus {
@@ -249,37 +259,66 @@
     display: flex;
     align-items: center;
     box-sizing: border-box;
+
+    @media screen and (max-width: 800px) {
+      padding: 10px;
+    }
   }
 
   .rank {
     width: 30px;
+
+    @media screen and (max-width: 800px) {
+      visibility: hidden;
+    }
   }
 
   .summoner {
     width: 240px;
     margin-left: 20px;
+    @media screen and (max-width: 800px) {
+      width: 180px;
+      margin-left: 10px;
+    }
   }
 
   .name {
     width: 100px;
+    @media screen and (max-width: 800px) {
+      width: 80px;
+    }
   }
 
   .tier {
     width: 140px;
+
+    @media screen and (max-width: 800px) {
+      width: 120px;
+    }
   }
 
   .level {
     width: 100px;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
   .Select {
     display: flex;
   }
+
   .apply {
     background-color: rgb(100, 130, 228);
     color: #fff;
     border: none;
     cursor: pointer;
     padding: 0px 20px;
+
+    @media screen and (max-width: 800px) {
+      margin-top: 10px;
+      padding: 8px 12px;
+    }
   }
 
   .inputWrapper {
@@ -320,7 +359,12 @@
   .input:focus {
     outline: none;
   }
-
+  .rate {
+    @media screen and (max-width: 800px) {
+      margin-left: 0;
+      width: 30px;
+    }
+  }
   .applyButton {
     width: 100%;
     box-sizing: border-box;

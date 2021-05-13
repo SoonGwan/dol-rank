@@ -1,6 +1,6 @@
 <script lang="ts">
   import { blur } from "svelte/transition";
-
+  export let position: string;
   export let idx: number;
   export let iconImg: number;
   export let name: string;
@@ -18,6 +18,11 @@
   $: totalGame = soloWins + soloLosses;
   $: calcOdss = 100 / totalGame !== Infinity ? 100 / totalGame : null;
   $: rate = Math.floor(calcOdss * soloWins);
+  import bot from "../../asset/LinePng/bot.png";
+  import jg from "../../asset/LinePng/jg.png";
+  import mid from "../../asset/LinePng/mid.png";
+  import top from "../../asset/LinePng/top.png";
+  import sup from "../../asset/LinePng/sup.png";
 </script>
 
 <div class="SummonerWrapper" transition:blur={{ amount: 20 }}>
@@ -68,9 +73,32 @@
       {rate}%
     </div>
   {/if}
+  <div class="positionIcon">
+    <img
+      src={position === "탑"
+        ? top
+        : position === "정글"
+        ? jg
+        : position === "미드"
+        ? mid
+        : position === "원딜"
+        ? bot
+        : sup}
+      alt=""
+    />
+  </div>
 </div>
 
-<style scoped>
+<style scoped lang="scss">
+  .positionIcon > img {
+    margin-left: 20px;
+    width: 40px;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
+
   .SummonerWrapper {
     width: 100%;
     padding: 20px 40px;
@@ -80,6 +108,10 @@
     display: flex;
     align-items: center;
     box-sizing: border-box;
+
+    @media screen and (max-width: 800px) {
+      padding: 10px;
+    }
   }
 
   .lolNickName {
@@ -87,23 +119,49 @@
     word-break: break-all;
     font-weight: bold;
     font-size: 16px;
+
+    @media screen and (max-width: 800px) {
+      width: 120px;
+      font-size: 14px;
+      overflow: hidden;
+      padding: 0 5px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
   .index {
     width: 30px;
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: 800px) {
+      font-size: 12px;
+    }
   }
   .name {
     color: #787878;
     width: 100px;
+
+    @media screen and (max-width: 800px) {
+      width: 80px;
+    }
   }
 
   .rank {
     color: #787878;
     width: 140px;
+    @media screen and (max-width: 800px) {
+      width: 120px;
+    }
   }
 
   .level {
     color: #787878;
     width: 100px;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
 
   .lolIcon > img {
@@ -111,6 +169,11 @@
     height: 60px;
     border-radius: 50%;
     margin: 0px 20px;
+    @media screen and (max-width: 800px) {
+      width: 28px;
+      height: 28px;
+      margin: 0px 10px;
+    }
   }
 
   .loss {
@@ -130,10 +193,19 @@
     font-size: 12px;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
 
   .rate {
     color: #787878;
     margin-left: 10px;
+
+    @media screen and (max-width: 800px) {
+      margin-left: 0;
+      width: 30px;
+    }
   }
 </style>
