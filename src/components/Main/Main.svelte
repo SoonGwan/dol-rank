@@ -77,6 +77,10 @@
   };
 </script>
 
+<svelte:head>
+  <title>돌랭-DOL</title>
+</svelte:head>
+
 <Nav />
 <div class="MainWrapper">
   <div class="MainItemSection">

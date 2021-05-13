@@ -10,7 +10,7 @@ export const TierConverter = ({soloTier, soloRank}) => {
 const TearModel = {
     IRON: 0,
     BRONZE: 4,
-    SLIVER: 8,
+    SILVER: 8,
     GOLD: 12,
     PLATINUM: 16,
     DIAMOND:20,

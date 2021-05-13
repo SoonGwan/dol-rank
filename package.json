@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
+    "build": "rm -rf build && svelte-kit build",
     "preview": "svelte-kit preview",
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --write --plugin-search-dir=. ."
+    "format": "prettier --write --plugin-search-dir=. .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -t true"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^1.0.0-next.9",
@@ -33,9 +35,11 @@
     "add": "^2.0.6",
     "axios": "^0.21.1",
     "cookie": "^0.4.1",
+    "gh-pages": "^3.1.0",
     "svelte-icons": "^2.1.0",
     "svelte-notifications": "^0.9.9",
     "svelte-toast": "^1.0.0",
     "yarn": "^1.22.10"
-  }
+  },
+  "homepage": "https://github.com/SoonGwan/dol-rank"
 }
