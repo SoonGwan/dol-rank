@@ -104,15 +104,21 @@
   .SummonerWrapper {
     width: 100%;
     padding: 20px 40px;
-    box-shadow: 0px 0px 40px rgb(0 0 0 / 10%);
+    box-shadow: 0px 0px 40px rgb(0 0 0 / 5%);
     border-radius: 10px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
+    background-color: white;
 
+    transition: all 0.25s ease;
     @media screen and (max-width: 800px) {
       padding: 10px;
+    }
+
+    &:hover {
+      background-color: darken(white, 5%);
     }
   }
 

@@ -28,9 +28,14 @@ body {
     var(--tertiary-color) 41.35%
   ); */
 
+  user-select: none;
   @media screen and (max-width: 800px) {
     font-size: 12px;
   }
+}
+
+button {
+  background-color: rgb(238, 238, 238);
 }
 
 body::before {

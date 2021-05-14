@@ -7,6 +7,8 @@
   import Summoner from "../Summoner/Summoner.svelte";
   import { applySummonerValidate } from "../../validation/applySummoner.validation";
   import IoIosInformationCircle from "svelte-icons/io/IoIosInformationCircle.svelte";
+  import { GenerationType } from "../../enum/GenerationType";
+
   type summonersProps = {
     accountId: string;
     flexLosses: null | number;
@@ -30,6 +32,7 @@
 
   export let summoners: summonersProps[];
   let rankType = RankType.TOTAL;
+  $: generationType = GenerationType.TOTAL;
 
   $: filterSummoner = summoners
     .sort((a, b) => {
@@ -37,9 +40,14 @@
     })
     .filter((args: summonersProps) => {
       return args.position.includes(rankType);
+    })
+    .filter((args: summonersProps) => {
+      if (generationType === "") {
+        return args;
+      } else {
+        return args.generation === generationType;
+      }
     });
-
-  $: console.log(filterSummoner);
 
   $: isOpen = false;
 
@@ -145,6 +153,34 @@
 
       <button class="apply" on:click={handleOpen}>신청하기</button>
     </div>
+    <div class="SelectGenerationWrapper">
+      <div class="Select">
+        <button
+          class={generationType === GenerationType.TOTAL
+            ? "SelectItem selected"
+            : "SelectItem"}
+          on:click={() => (generationType = GenerationType.TOTAL)}>전체</button
+        >
+        <button
+          class={generationType === GenerationType.G4
+            ? "SelectItem selected"
+            : "SelectItem"}
+          on:click={() => (generationType = GenerationType.G4)}>4기</button
+        >
+        <button
+          class={generationType === GenerationType.G5
+            ? "SelectItem selected"
+            : "SelectItem"}
+          on:click={() => (generationType = GenerationType.G5)}>5기</button
+        >
+        <button
+          class={generationType === GenerationType.G6
+            ? "SelectItem selected"
+            : "SelectItem"}
+          on:click={() => (generationType = GenerationType.G6)}>6기</button
+        >
+      </div>
+    </div>
     {#if isOpen === true}
       <Modal {isOpen} handleCloseModal={handleOpen}>
         <div class="inputWrapper">
@@ -242,7 +278,6 @@
     display: flex;
     flex-wrap: wrap;
     font-size: 14px;
-    margin-bottom: 30px;
     justify-content: space-between;
 
     /* @media screen and (max-width: 800px) {
@@ -250,9 +285,20 @@
     } */
   }
 
+  .SelectGenerationWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
   .SelectItem {
     display: flex;
-    padding: 8px 30px;
+    width: 64px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    /* padding: 0px 30px; */
     border: none;
     cursor: pointer;
     /* color: rgb(100, 130, 228); */
