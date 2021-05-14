@@ -97,18 +97,20 @@
 <Nav />
 <div class="MainWrapper">
   <div class="MainItemSection">
-    <div class="starGiveMe">
-      <div class="icon"><IoIosInformationCircle /></div>
-      <a href="https://github.com/SoonGwan/dol-rank" target="_blank">
-        여기를 클릭해서 저에게 스타를 주세요!
-      </a>
-    </div>
+    <div class="GithubWrapper">
+      <div class="starGiveMe">
+        <div class="icon"><IoIosInformationCircle /></div>
+        <a href="https://github.com/SoonGwan/dol-rank" target="_blank">
+          여기를 클릭해서 저에게 스타를 주세요!
+        </a>
+      </div>
 
-    <div class="starGiveMe">
-      <div class="icon"><IoIosInformationCircle /></div>
-      <a href="https://github.com/SoonGwan/dol-rank/issues" target="_blank">
-        이슈를 등록하여 새로운 기능이나, 버그를 알려주세요!
-      </a>
+      <div class="starGiveMe">
+        <div class="icon"><IoIosInformationCircle /></div>
+        <a href="https://github.com/SoonGwan/dol-rank/issues" target="_blank">
+          이슈를 등록하여 새로운 기능이나, 버그를 알려주세요!
+        </a>
+      </div>
     </div>
 
     <div class="SelectWrapper">
@@ -255,6 +257,14 @@
 </div>
 
 <style scoped lang="scss">
+  .GithubWrapper {
+    display: flex;
+
+    & > * + * {
+      margin-left: 10px;
+    }
+  }
+
   .MainWrapper {
     width: 100%;
     display: flex;
