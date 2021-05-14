@@ -1,15 +1,12 @@
 import type {applySummonerRequest}  from '../repository/summoner.repository';
 
 export const applySummonerValidate = (request:applySummonerRequest) => {
-    if (
-      request.generation === 0 ||
-      request.name.trim()=== "" ||
-      request.lolNickName === "" ||
-      request.position === 0
-    ) {
-        
-        return false
-    }
+  const {generation, name, lolNickName, position} = request
+
+  if(generation === 0 || name === "" || lolNickName === "" || position ==="") {
+    return false;
+
+  }
 
     return true;
-  };
+};

@@ -6,7 +6,7 @@
   import Nav from "../Nav/Nav.svelte";
   import Summoner from "../Summoner/Summoner.svelte";
   import { applySummonerValidate } from "../../validation/applySummoner.validation";
-
+  import IoIosInformationCircle from "svelte-icons/io/IoIosInformationCircle.svelte";
   type summonersProps = {
     accountId: string;
     flexLosses: null | number;
@@ -30,13 +30,16 @@
 
   export let summoners: summonersProps[];
   let rankType = RankType.TOTAL;
+
   $: filterSummoner = summoners
     .sort((a, b) => {
       return TierConverter(b) - TierConverter(a);
     })
-    .filter((args: any) => {
+    .filter((args: summonersProps) => {
       return args.position.includes(rankType);
     });
+
+  $: console.log(filterSummoner);
 
   $: isOpen = false;
 
@@ -61,6 +64,8 @@
   const handleRequestSummoner = async () => {
     try {
       if (!applySummonerValidate(request)) {
+        alert("다 채워 주세요.");
+
         return;
       }
 
@@ -84,6 +89,20 @@
 <Nav />
 <div class="MainWrapper">
   <div class="MainItemSection">
+    <div class="starGiveMe">
+      <div class="icon"><IoIosInformationCircle /></div>
+      <a href="https://github.com/SoonGwan/dol-rank" target="_blank">
+        여기를 클릭해서 저에게 스타를 주세요!
+      </a>
+    </div>
+
+    <div class="starGiveMe">
+      <div class="icon"><IoIosInformationCircle /></div>
+      <a href="https://github.com/SoonGwan/dol-rank/issues" target="_blank">
+        이슈를 등록하여 새로운 기능이나, 버그를 알려주세요!
+      </a>
+    </div>
+
     <div class="SelectWrapper">
       <div class="Select">
         <button
@@ -123,6 +142,7 @@
           on:click={() => (rankType = RankType.SUP)}>서폿</button
         >
       </div>
+
       <button class="apply" on:click={handleOpen}>신청하기</button>
     </div>
     {#if isOpen === true}
@@ -130,7 +150,7 @@
         <div class="inputWrapper">
           <div class="topTitle">기수를 선택해 주세요.</div>
           <select class="selectInput" name="" id="" bind:value={generation}>
-            <option value="0">기수를 선택해 주세요.</option>
+            <option value="">기수를 선택해 주세요.</option>
             <option value="1">1기</option>
             <option value="2">2기</option>
             <option value="3">3기</option>
@@ -142,7 +162,7 @@
         <div class="inputWrapper">
           <div class="topTitle">주 포지션을 선택해주세요.</div>
           <select class="selectInput" name="" id="" bind:value={position}>
-            <option value="0">주 포지션을 선택해 주세요.</option>
+            <option value="">주 포지션을 선택해 주세요.</option>
             <option value="탑">탑</option>
             <option value="정글">정글</option>
             <option value="미드">미드</option>
@@ -172,11 +192,11 @@
       <div class="summoner">소환사</div>
       <div class="name">이름(기수)</div>
       <div class="tier">티어</div>
-      <div class="level">레밸</div>
+      <div class="level">레벨</div>
       <div class="rate">승률</div>
     </div>
 
-    {#each filterSummoner as summoner, index}
+    {#each filterSummoner as summoner, index (summoner.id)}
       <Summoner
         position={summoner.position}
         generation={summoner.generation}
@@ -384,5 +404,21 @@
 
   .applyButton:focus {
     outline: none;
+  }
+
+  .starGiveMe {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    margin-bottom: 10px;
+
+    & > * + * {
+      margin-left: 5px;
+    }
+  }
+
+  .icon {
+    width: 20px;
+    color: rgb(100, 130, 228);
   }
 </style>

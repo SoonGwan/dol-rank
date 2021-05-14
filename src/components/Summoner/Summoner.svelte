@@ -25,38 +25,39 @@
   import sup from "../../asset/LinePng/sup.png";
 </script>
 
-<div class="SummonerWrapper" transition:blur={{ amount: 20 }}>
-  <div class="index">{idx + 1}</div>
-  <div class="lolIcon">
-    <img
-      src={`https://ddragon.leagueoflegends.com/cdn/11.9.1/img/profileicon/${iconImg}.png`}
-      alt=""
-    />
-  </div>
-  <div class="lolNickName">
-    {nickName}
-  </div>
+<a href={`https://poro.gg/summoner/kr/${nickName}`} target="_blank">
+  <div class="SummonerWrapper" transition:blur={{ amount: 20 }}>
+    <div class="index">{idx + 1}</div>
+    <div class="lolIcon">
+      <img
+        src={`https://ddragon.leagueoflegends.com/cdn/11.9.1/img/profileicon/${iconImg}.png`}
+        alt=""
+      />
+    </div>
+    <div class="lolNickName">
+      {nickName}
+    </div>
 
-  <div class="name">
-    {name}({generation}기)
-  </div>
+    <div class="name">
+      {name}({generation}기)
+    </div>
 
-  <div class="rank">
-    {#if soloTier === null}
-      언랭
-    {:else}
-      {soloTier} / {soloRank}
-    {/if}
-  </div>
-  <div class="level">
-    Lv.{level}
-  </div>
-  <!-- svelte-ignore empty-block -->
-  {#if soloTier === null}{:else}
-    <div class="odds">
-      <div
-        class="win"
-        style="{`width: ${rate + 1}%;`} 
+    <div class="rank">
+      {#if soloTier === null}
+        언랭
+      {:else}
+        {soloTier} / {soloRank}
+      {/if}
+    </div>
+    <div class="level">
+      Lv.{level}
+    </div>
+    <!-- svelte-ignore empty-block -->
+    {#if soloTier === null}{:else}
+      <div class="odds">
+        <div
+          class="win"
+          style="{`width: ${rate + 1}%;`} 
         padding-left:10px; 
         border-radius: 4px 0px 0px 4px;
         box-sizing:border-box; 
@@ -64,30 +65,31 @@
         height:100%; 
         display:flex; 
         align-items:center;"
-      >
-        {soloWins}
+        >
+          {soloWins}
+        </div>
+        <div class="loss">{soloLosses}</div>
       </div>
-      <div class="loss">{soloLosses}</div>
+      <div class="rate">
+        {rate}%
+      </div>
+    {/if}
+    <div class="positionIcon">
+      <img
+        src={position === "탑"
+          ? top
+          : position === "정글"
+          ? jg
+          : position === "미드"
+          ? mid
+          : position === "원딜"
+          ? bot
+          : sup}
+        alt=""
+      />
     </div>
-    <div class="rate">
-      {rate}%
-    </div>
-  {/if}
-  <div class="positionIcon">
-    <img
-      src={position === "탑"
-        ? top
-        : position === "정글"
-        ? jg
-        : position === "미드"
-        ? mid
-        : position === "원딜"
-        ? bot
-        : sup}
-      alt=""
-    />
   </div>
-</div>
+</a>
 
 <style scoped lang="scss">
   .positionIcon > img {

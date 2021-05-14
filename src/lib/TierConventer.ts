@@ -14,6 +14,9 @@ const TearModel = {
     GOLD: 12,
     PLATINUM: 16,
     DIAMOND:20,
+    MASTER:25,
+    GRANDMASTER:500,
+    CHALLENGER:1000
 }
 
 const RankModel ={

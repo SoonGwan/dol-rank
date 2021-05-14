@@ -2,8 +2,8 @@
   <div class="TitleWrapper">
     <div class="TopTitle">DOL</div>
     <div class="Description">
-      dgsw character dictionary <br /> 대구소프트웨어고등학교 리그오브레전드 티어
-      정보를 기록합니다.
+      dgsw lol rank history <br /> 대구소프트웨어고등학교 리그오브레전드 티어 정보를
+      기록합니다.
     </div>
   </div>
 </div>
