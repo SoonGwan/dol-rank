@@ -1,38 +1,12 @@
-# create-svelte
+Dol-Rank는 대구소프트웨어고등학교의 롤 솔랭 티어를 표시합니다.
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+⚠️ 대구소프트웨어고등학교의 e-sports 때 상대편 전적검색을 편리하게 만들어주기 위해 만들었습니다.
 
-## Creating a project
+## 안내사항
+- 대구소프트웨어고등학교 재학생 혹은 졸업생 대상입니다.
+- 사용자가 본인의 ID를 등록하면 승인 후 표시합니다.
+- 정확한 정보를 위해 신청시 이름을 정확하게 입력해주세요.
+- 사용자 정보 수정 및 삭제는 해당 저장소의 이슈 혹은 직접 연락바랍니다.
+- 개선사항, 오류는 해당 저장소의 이슈를 이용해주세요
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
-```
-
-> Note: the `@next` is temporary
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
-
-```bash
-npm run build
-```
-
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+![스크린샷 2021-05-14 오후 4 28 38](https://user-images.githubusercontent.com/48983361/118236756-7213d900-b4d1-11eb-8261-30a392a5afae.png)
